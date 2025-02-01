@@ -1,7 +1,16 @@
+import Navbar from "./components/Navbar";
 import Dashboard from "./pages/Dashboard";
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
-function App() {
-  return <Dashboard />;
+export default function App() {
+  return (
+    <BrowserRouter>
+  
+      <Routes>
+        <Route path="/" element={<Dashboard/>} />
+      </Routes>
+    </BrowserRouter>
+  )
 }
 
-export default App;
+
