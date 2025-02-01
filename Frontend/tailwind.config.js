@@ -17,6 +17,7 @@ export default {
         tangerine: ['Tangerine'],
         cinzel: ['Cinzel'],
         Lavish: ['sans-serif'],
+        sans: ['Poppins', 'sans-serif'],
         Baloo: ['Baloo 2']
       },
     },
