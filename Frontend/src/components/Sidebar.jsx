@@ -24,7 +24,7 @@ const Sidebar = () => {
         <div className="w-10 h-10 bg-gray-500 rounded-full flex items-center justify-center text-white text-xl font-bold">
           B
         </div>
-        <h2 className="text-xl font-bold text-gray-500">Base</h2>
+        <h2 className="text-xl font-bold text-gray-400">Base</h2> {/* Light grey font for logo */}
       </div>
 
       {/* Navigation */}
@@ -38,12 +38,12 @@ const Sidebar = () => {
               ${
                 active === item.name
                   ? "text-[#8c4de3] font-semibold"
-                  : "text-gray-500 text-lg hover:text-[#8c4de3]"
+                  : "text-gray-400 text-lg hover:text-[#8c4de3]" /* Light grey font for inactive items */
               }`}
             >
               <div
                 className={`w-8 h-8 flex items-center justify-center transition-all duration-300
-                ${active === item.name ? "text-[#8c4de3]" : "text-gray-500 group-hover:text-[#8c4de3]"}`}
+                ${active === item.name ? "text-[#8c4de3]" : "text-gray-400 group-hover:text-[#8c4de3]"}`} /* Light grey font for icon */
               >
                 {item.icon}
               </div>

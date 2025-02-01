@@ -28,8 +28,8 @@ const Dashboard = () => {
 
         {/* Charts - Responsive grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <ReportsChart />
-          <AnalyticsChart />
+    {/* Sidebar - Use Tailwind to hide it on mobile      <ReportsChart />
+          <AnalyticsChart /> */}  
         </div>
       </div>
     </div>
