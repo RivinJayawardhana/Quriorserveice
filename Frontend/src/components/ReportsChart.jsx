@@ -1,4 +1,4 @@
-import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
+import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from "recharts";
 
 const data = [
   { name: "10am", value: 40000 },
@@ -10,14 +10,22 @@ const data = [
 
 const ReportsChart = () => {
   return (
-    <div className="bg-white p-5 shadow rounded-lg">
-      <h3 className="text-xl font-semibold">Reports</h3>
+    <div className="bg-white p-5 shadow-lg rounded-lg">
+      <h3 className="text-xl font-semibold text-gray-500">Reports</h3>
       <ResponsiveContainer width="100%" height={250}>
         <LineChart data={data}>
-          <XAxis dataKey="name" />
-          <YAxis />
-          <Tooltip />
-          <Line type="monotone" dataKey="value" stroke="blue" strokeWidth={2} />
+          <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+          <XAxis dataKey="name" stroke="#D1D5DB" />
+          <YAxis stroke="#D1D5DB" />
+          <Tooltip contentStyle={{ backgroundColor: '#f8f9fa', borderRadius: '8px', color: '#6c757d' }} />
+          <Line
+            type="monotone"
+            dataKey="value"
+            stroke="#ec4899" // Pink color for the line
+            strokeWidth={3}
+            dot={{ r: 6, fill: '#ec4899' }} // Pink dot for the data points
+            activeDot={{ r: 8, fill: '#ec4899' }}
+          />
         </LineChart>
       </ResponsiveContainer>
     </div>
