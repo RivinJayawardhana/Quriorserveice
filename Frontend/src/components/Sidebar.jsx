@@ -6,15 +6,15 @@ const Sidebar = () => {
 
   const menuItems = [
     { name: "Dashboard", icon: <FaChartBar /> },
-    { name: "Analytics", icon: <FaClipboardList /> },
-    { name: "Invoice", icon: <FaTable /> },
-    { name: "Schedule", icon: <FaCalendar /> },
-    { name: "Calendar", icon: <FaCalendar /> },
-    { name: "Messages", icon: <FaEnvelope />, badge: 49 },
-    { name: "Notification", icon: <FaBell /> },
-    { name: "Settings", icon: <FaCog /> },
-    { name: "Sign In", icon: <FaLock /> },
-    { name: "Sign Up", icon: <FaShoppingCart /> },
+    { name: "Analytics", icon: <FaClipboardList/> },
+    { name: "Invoice", icon: <FaTable/> },
+    { name: "Schedule", icon: <FaCalendar/> },
+    { name: "Calendar", icon: <FaCalendar/> },
+    { name: "Messages", icon: <FaEnvelope/>, badge: 49 },
+    { name: "Notification", icon: <FaBell/> },
+    { name: "Settings", icon: <FaCog/> },
+    { name: "Sign In", icon: <FaLock/> },
+    { name: "Sign Up", icon: <FaShoppingCart/> },
   ];
 
   return (
