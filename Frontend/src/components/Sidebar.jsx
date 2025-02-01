@@ -37,13 +37,13 @@ const Sidebar = () => {
               className={`relative flex items-center space-x-3 px-4 py-3 rounded-lg cursor-pointer transition-all duration-300
               ${
                 active === item.name
-                  ? "text-gray-400 font-semibold bg-gradient-to-r from-gray-50 to-white"
-                  : "text-gray-400 text-lg hover:bg-gray-200"
+                  ? "text-[#8c4de3] font-semibold"
+                  : "text-gray-500 text-lg hover:text-[#8c4de3]"
               }`}
             >
               <div
                 className={`w-8 h-8 flex items-center justify-center transition-all duration-300
-                ${active === item.name ? "text-gray-400" : "text-gray-400"}`}
+                ${active === item.name ? "text-[#8c4de3]" : "text-gray-500 group-hover:text-[#8c4de3]"}`}
               >
                 {item.icon}
               </div>
