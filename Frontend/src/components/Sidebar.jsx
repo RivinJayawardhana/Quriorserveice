@@ -6,23 +6,25 @@ const Sidebar = () => {
 
   const menuItems = [
     { name: "Dashboard", icon: <FaChartBar /> },
-    { name: "Analytics", icon: <FaClipboardList/> },
-    { name: "Invoice", icon: <FaTable/> },
-    { name: "Schedule", icon: <FaCalendar/> },
-    { name: "Calendar", icon: <FaCalendar/> },
-    { name: "Messages", icon: <FaEnvelope/>, badge: 49 },
-    { name: "Notification", icon: <FaBell/> },
-    { name: "Settings", icon: <FaCog/> },
-    { name: "Sign In", icon: <FaLock/> },
-    { name: "Sign Up", icon: <FaShoppingCart/> },
+    { name: "Analytics", icon: <FaClipboardList /> },
+    { name: "Invoice", icon: <FaTable /> },
+    { name: "Schedule", icon: <FaCalendar /> },
+    { name: "Calendar", icon: <FaCalendar /> },
+    { name: "Messages", icon: <FaEnvelope />, badge: 49 },
+    { name: "Notification", icon: <FaBell /> },
+    { name: "Settings", icon: <FaCog /> },
+    { name: "Sign In", icon: <FaLock /> },
+    { name: "Sign Up", icon: <FaShoppingCart /> },
   ];
 
   return (
     <div className="w-64 h-screen bg-gradient-to-b from-white to-gray-100 shadow-lg p-5 flex flex-col">
       {/* Logo Section */}
       <div className="flex items-center space-x-3 mb-8">
-        <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white text-xl font-bold">B</div>
-        <h2 className="text-xl font-bold text-gray-700">Base</h2>
+        <div className="w-10 h-10 bg-gray-500 rounded-full flex items-center justify-center text-white text-xl font-bold">
+          B
+        </div>
+        <h2 className="text-xl font-bold text-gray-500">Base</h2>
       </div>
 
       {/* Navigation */}
@@ -33,11 +35,15 @@ const Sidebar = () => {
               key={item.name}
               onClick={() => setActive(item.name)}
               className={`relative flex items-center space-x-3 px-4 py-3 rounded-lg cursor-pointer transition-all duration-300
-              ${active === item.name ? "text-blue-700 font-semibold bg-gradient-to-r from-blue-50 to-white" : "text-gray-600 text-lg hover:bg-gray-100"}`}
+              ${
+                active === item.name
+                  ? "text-gray-400 font-semibold bg-gradient-to-r from-gray-50 to-white"
+                  : "text-gray-400 text-lg hover:bg-gray-200"
+              }`}
             >
               <div
-                className={`w-8 h-8 flex items-center justify-center  transition-all duration-300
-                ${active === item.name ? " text-blue-700" : " text-gray-500"}`}
+                className={`w-8 h-8 flex items-center justify-center transition-all duration-300
+                ${active === item.name ? "text-gray-400" : "text-gray-400"}`}
               >
                 {item.icon}
               </div>
