@@ -20,10 +20,11 @@ const Navbar = () => {
     { name: "Dutch", code: "nld", flag: "https://upload.wikimedia.org/wikipedia/commons/2/20/Flag_of_the_Netherlands.svg" }
   ];
 
+  const [sidebarVisible, setSidebarVisible] = useState(false);
+
   const dropdownRef = useRef(null);
   const profileMenuRef = useRef(null);
 
-  // Close dropdowns when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -44,8 +45,14 @@ const Navbar = () => {
     <nav className="flex justify-between items-center bg-white px-6 py-3 relative">
       {/* Sidebar Toggle and Search Bar */}
       <div className="flex items-center space-x-4 w-1/2">
-        <FaBars className="text-gray-600 text-xl cursor-pointer" />
-        <div className="relative flex-grow">
+        {/* Toggle button */}
+        <FaBars
+          className="text-gray-600 text-xl cursor-pointer"
+          onClick={() => setSidebarVisible(!sidebarVisible)}
+        />
+
+        {/* Search field (Hidden on small screens) */}
+        <div className="relative flex-grow hidden md:block">
           <FaSearch className="absolute right-80 top-1/2 transform -translate-y-1/2 text-gray-500" />
           <input
             type="text"
@@ -55,6 +62,9 @@ const Navbar = () => {
             onBlur={() => setSearchFocus(false)}
           />
         </div>
+
+        {/* Search Icon (Only visible on small screens) */}
+        <FaSearch className="text-gray-600 text-xl cursor-pointer md:hidden" />
       </div>
 
       {/* Right Side Controls */}
