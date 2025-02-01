@@ -42,7 +42,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="flex justify-between items-center bg-white px-6 py-3 relative">
+    <nav className="flex justify-between items-center bg-gray-100 px-6 py-3 relative">
       {/* Sidebar Toggle and Search Bar */}
       <div className="flex items-center space-x-4 w-1/2">
         {/* Toggle button */}

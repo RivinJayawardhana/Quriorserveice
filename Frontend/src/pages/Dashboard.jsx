@@ -7,18 +7,18 @@ import { FaHeart, FaBox, FaShoppingBag, FaBriefcase } from "react-icons/fa";
 
 const Dashboard = () => {
   return (
-    <div className="flex">
+    <div className="flex bg-gray-100">
       {/* Sidebar - Use Tailwind to hide it on mobile */}
-      <div className="md:block hidden">
+      <div className="md:block hidden bg-gray-100">
         <Sidebar />
       </div>
 
-      <div className="flex-1 p-5">
+      <div className="flex-1 p-5 bg-gray-100">
         {/* Navbar */}
         <Navbar/>
 
         {/* Cards - Responsive grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 my-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 my-6 bg-gray-100">
           <Card icon={<FaHeart className="text-blue-600"/>} title="Save Products" count="178" bgColor="bg-blue-100" />
           <Card icon={<FaBox className="text-yellow-200" />} title="Stock Products" count="20" bgColor="bg-yellow-50" />
           <Card icon={<FaShoppingBag className="text-orange-300"/>} title="Sales Products" count="190" bgColor="bg-red-50" />
