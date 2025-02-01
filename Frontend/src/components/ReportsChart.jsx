@@ -1,35 +1,119 @@
-import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from "recharts";
+import { useEffect, useState } from 'react';
 
-const data = [
-  { name: "10am", value: 40000 },
-  { name: "11am", value: 60000 },
-  { name: "12pm", value: 50000 },
-  { name: "1pm", value: 70000 },
-  { name: "2pm", value: 65000 },
-];
+// material-ui
+import { useTheme } from '@mui/material/styles';
 
-const ReportsChart = () => {
-  return (
-    <div className="bg-white p-5 shadow-lg rounded-lg">
-      <h3 className="text-xl font-semibold text-gray-500">Reports</h3>
-      <ResponsiveContainer width="100%" height={250}>
-        <LineChart data={data}>
-          <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-          <XAxis dataKey="name" stroke="#D1D5DB" />
-          <YAxis stroke="#D1D5DB" />
-          <Tooltip contentStyle={{ backgroundColor: '#f8f9fa', borderRadius: '8px', color: '#6c757d' }} />
-          <Line
-            type="monotone"
-            dataKey="value"
-            stroke="#ec4899" // Pink color for the line
-            strokeWidth={3}
-            dot={{ r: 6, fill: '#ec4899' }} // Pink dot for the data points
-            activeDot={{ r: 8, fill: '#ec4899' }}
-          />
-        </LineChart>
-      </ResponsiveContainer>
-    </div>
-  );
+// third-party
+import ReactApexChart from 'react-apexcharts';
+
+// chart options
+const areaChartOptions = {
+  chart: {
+    height: 340,
+    type: 'line',
+    toolbar: {
+      show: false
+    }
+  },
+  dataLabels: {
+    enabled: false
+  },
+  stroke: {
+    curve: 'smooth',
+    width: 4  // Increased line width to make the line more bold
+  },
+  grid: {
+    strokeDashArray: 4
+  },
+  xaxis: {
+    type: 'datetime',
+    categories: [
+      '2018-05-19T00:00:00.000Z',
+      '2018-06-19T00:00:00.000Z',
+      '2018-07-19T01:30:00.000Z',
+      '2018-08-19T02:30:00.000Z',
+      '2018-09-19T03:30:00.000Z',
+      '2018-10-19T04:30:00.000Z',
+      '2018-11-19T05:30:00.000Z',
+      '2018-12-19T06:30:00.000Z'
+    ],
+    labels: {
+      format: 'MMM'
+    },
+    axisBorder: {
+      show: false
+    },
+    axisTicks: {
+      show: false
+    }
+  },
+  yaxis: {
+    show: false
+  },
+  tooltip: {
+    x: {
+      format: 'MM'
+    }
+  },
+  fill: {
+    type: 'gradient',
+    gradient: {
+      shade: 'light',
+      type: 'horizontal',
+      shadeIntensity: 0.6,
+      gradientToColors: ['#FF7A8C'], // Rose color
+      inverseColors: false,
+      opacityFrom: 0.7,
+      opacityTo: 0.2,
+      stops: [0, 100]
+    }
+  },
+  colors: ['#FF4891'],  // Gradient starting color (pink)
 };
 
-export default ReportsChart;
+// ==============================|| REPORT AREA CHART ||============================== //
+
+export default function ReportAreaChart() {
+  const theme = useTheme();
+
+  const { primary, secondary } = theme.palette.text;
+  const line = theme.palette.divider;
+
+  const [options, setOptions] = useState(areaChartOptions);
+
+  useEffect(() => {
+    setOptions((prevState) => ({
+      ...prevState,
+      colors: ['#FF4891'], // Gradient starting color (pink)
+      xaxis: {
+        labels: {
+          style: {
+            colors: [secondary, secondary, secondary, secondary, secondary, secondary, secondary, secondary]
+          }
+        }
+      },
+      grid: {
+        borderColor: line
+      },
+      legend: {
+        labels: {
+          colors: 'grey.500'
+        }
+      }
+    }));
+  }, [primary, secondary, line, theme]);
+
+  const [series] = useState([
+    {
+      name: 'Series 1',
+      data: [58, 115, 28, 83, 63, 75, 35, 55]
+    }
+  ]);
+
+  return (
+    <div style={{ backgroundColor: 'white', padding: '20px', borderRadius: '8px' }}>
+      <h3 style={{ fontSize: '18px', fontWeight: 'bold', marginBottom: '16px', }}>Reports</h3>
+      <ReactApexChart options={options} series={series} type="line" height={340} />
+    </div>
+  );
+}

@@ -1,9 +1,10 @@
 import Sidebar from "../components/Sidebar";
 import Navbar from "../components/Navbar";
 import Card from "../components/Card";
-import ReportsChart from "../components/ReportsChart";
+import ReportAreaChart from "../components/ReportsChart";
 import AnalyticsChart from "../components/AnalyticsChart";
 import { FaHeart, FaBox, FaShoppingBag, FaBriefcase } from "react-icons/fa";
+
 
 const Dashboard = () => {
   return (
@@ -30,6 +31,12 @@ const Dashboard = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
     {/* Sidebar - Use Tailwind to hide it on mobile      <ReportsChart />
           <AnalyticsChart /> */}  
+          <ReportAreaChart/>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    {/* Sidebar - Use Tailwind to hide it on mobile      <ReportsChart />
+          <AnalyticsChart /> */}  
+          <ReportAreaChart/>
+        </div>
         </div>
       </div>
     </div>
