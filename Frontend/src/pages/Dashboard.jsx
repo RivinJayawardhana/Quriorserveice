@@ -3,8 +3,9 @@ import Navbar from "../components/Navbar";
 import Card from "../components/Card";
 import ReportAreaChart from "../components/ReportsChart";
 import AnalyticsChart from "../components/AnalyticsChart";
+import RecentOrders from "../components/RecentOrders";
+import TopSellingItems from "../components/TopSellingItems";
 import { FaHeart, FaBox, FaShoppingBag, FaBriefcase } from "react-icons/fa";
-
 
 const Dashboard = () => {
   return (
@@ -16,27 +17,26 @@ const Dashboard = () => {
 
       <div className="flex-1 p-5 bg-gray-100">
         {/* Navbar */}
-        <Navbar/>
+        <Navbar />
 
         {/* Cards - Responsive grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 my-6 bg-gray-100">
-          <Card icon={<FaHeart className="text-blue-600"/>} title="Save Products" count="178" bgColor="bg-blue-100" />
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 my-6">
+          <Card icon={<FaHeart className="text-blue-600" />} title="Save Products" count="178" bgColor="bg-blue-100" />
           <Card icon={<FaBox className="text-yellow-200" />} title="Stock Products" count="20" bgColor="bg-yellow-50" />
-          <Card icon={<FaShoppingBag className="text-orange-300"/>} title="Sales Products" count="190" bgColor="bg-red-50" />
-          <Card icon={<FaBriefcase  className="text-blue-600"/>} title="Job Applications" count="12" bgColor="bg-blue-100" />
+          <Card icon={<FaShoppingBag className="text-orange-300" />} title="Sales Products" count="190" bgColor="bg-red-50" />
+          <Card icon={<FaBriefcase className="text-blue-600" />} title="Job Applications" count="12" bgColor="bg-blue-100" />
         </div>
-
 
         {/* Charts - Responsive grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-    {/* Sidebar - Use Tailwind to hide it on mobile      <ReportsChart />
-          <AnalyticsChart /> */}  
-          <ReportAreaChart/>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-    {/* Sidebar - Use Tailwind to hide it on mobile      <ReportsChart />
-          <AnalyticsChart /> */}  
-          <ReportAreaChart/>
+          <ReportAreaChart />
+          <AnalyticsChart />
         </div>
+
+        {/* Tables - Recent Orders & Top Selling Items */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+          <RecentOrders />
+          <TopSellingItems />
         </div>
       </div>
     </div>
