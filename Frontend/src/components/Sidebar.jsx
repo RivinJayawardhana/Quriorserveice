@@ -14,7 +14,7 @@ const Sidebar = () => {
     { name: "Products", icon: <FaCalendar />, path: "/products" },
     { name: "Messages", icon: <FaEnvelope />, path: "/massages", badge: 49 },
     { name: "Settings", icon: <FaCog />, path: "/settings" },
-    { name: "Sign In", icon: <FaLock />, path: "/signin" },
+    { name: "Sign In", icon: <FaLock />, path: "/login" },
   
   ];
 
