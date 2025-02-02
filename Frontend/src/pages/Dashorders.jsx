@@ -41,16 +41,7 @@ const DashOrders = () => {
         <h1 className="text-2xl font-semibold mb-4 text-gray-700">Order Management</h1>
 
         {/* Search Bar */}
-        <div className="mb-4 flex items-center bg-white shadow rounded-lg px-4 py-2 w-full max-w-md">
-          <FaSearch className="text-gray-500 mr-2" />
-          <input 
-            type="text" 
-            placeholder="Search order..." 
-            className="w-full outline-none bg-transparent"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-        </div>
+      
 
         {/* Table */}
         <div className="overflow-x-auto">
