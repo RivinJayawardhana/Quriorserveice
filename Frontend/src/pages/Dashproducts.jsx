@@ -5,8 +5,8 @@ import Navbar from "../components/Navbar";
 
 const productData = [
   { id: 1, name: "Courier Service", description: "Fast delivery within 24 hours.", image: "/images/quri.jpg" },
-  { id: 2, name: "Package Tracking", description: "Track your packages in real-time.", image: "https://via.placeholder.com/150" },
-  { id: 3, name: "Overnight Shipping", description: "Guaranteed delivery by the next day.", image: "https://via.placeholder.com/150" },
+  { id: 2, name: "Package Tracking", description: "Track your packages in real-time.", image: "/images/quri.jpg" },
+  { id: 3, name: "Overnight Shipping", description: "Guaranteed delivery by the next day.", image: "/images/quri.jpg" },
 ];
 
 const DashProducts = () => {
