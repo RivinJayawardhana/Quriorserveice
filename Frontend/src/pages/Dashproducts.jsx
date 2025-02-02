@@ -44,7 +44,7 @@ const DashProducts = () => {
         <div className="mb-6">
           <button 
             onClick={handleAddService} 
-            className="flex items-center bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
+            className="flex items-center bg-indigo-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
           >
             <FaPlusCircle className="mr-2" />
             Add Service
