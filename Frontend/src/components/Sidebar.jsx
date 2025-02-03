@@ -12,7 +12,7 @@ const Sidebar = () => {
     { name: "Invoice", icon: <FaTable />, path: "/invoice" },
     { name: "Orders", icon: <FaCalendar />, path: "/orders" },
     { name: "Products", icon: <FaCalendar />, path: "/products" },
-    { name: "Messages", icon: <FaEnvelope />, path: "/massages", badge: 49 },
+  
     { name: "Settings", icon: <FaCog />, path: "/settings" },
     { name: "Sign In", icon: <FaLock />, path: "/login" },
   
